@@ -1,0 +1,11 @@
+# Configurações do Chatbot Puerpério
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Configurações do Flask
+FLASK_ENV=development
+FLASK_DEBUG=True
+
+# Porta do servidor
+PORT=5000
+
+# Para usar este arquivo, renomeie para .env na raiz do projeto

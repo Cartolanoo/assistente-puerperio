@@ -1,0 +1,18 @@
+{
+  "identidade": {
+    "pergunta": "Por que me sinto perdida depois do parto?",
+    "resposta": "É normal. O puerpério é uma fase de transição intensa – seu corpo e mente estão se reorganizando. Esse sentimento de 'não ser mais a mesma' é parte do processo de se redescobrir."
+  },
+  "alimentacao": {
+    "pergunta": "O que devo comer no puerpério?",
+    "resposta": "Prefira alimentos ricos em ferro, cálcio e líquidos. Sopas, frutas, verduras e grãos ajudam na recuperação e na produção de leite."
+  },
+  "baby_blues": {
+    "pergunta": "O que é o baby blues?",
+    "resposta": "O baby blues é uma tristeza leve e passageira nos primeiros dias após o parto, causada por mudanças hormonais, cansaço e ajustes à maternidade. Normalmente melhora sozinho em até 2 semanas, mas atenção se os sintomas persistirem."
+  },
+  "puerperio": {
+    "pergunta": "O que é o puerpério?",
+    "resposta": "O puerpério é a fase pós-parto em que o corpo e a mente da mulher passam por transformações intensas para se adaptar à nova realidade."
+  }
+}

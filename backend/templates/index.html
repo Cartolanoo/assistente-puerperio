@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#f4a6a6">
+    <title>Assistente Puerpério - Apoio Materno</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-heart"></i>
+                    <h1>Assistente Puerpério</h1>
+                </div>
+                <div class="status-indicator">
+                    <span id="status-indicator" class="status-online">
+                        <i class="fas fa-circle"></i>
+                        Online
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <!-- Sidebar -->
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h3><i class="fas fa-list"></i> Categorias</h3>
+                    <button class="close-sidebar" id="close-sidebar">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="categories" id="categories">
+                    <div class="category-item">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        Carregando...
+                    </div>
+                </div>
+                <div class="sidebar-footer">
+                    <button class="btn btn-secondary" id="clear-history">
+                        <i class="fas fa-trash"></i>
+                        Limpar Histórico
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="chat-area">
+                <!-- Welcome Message -->
+                <div class="welcome-message" id="welcome-message">
+                    <div class="welcome-content">
+                        <i class="fas fa-baby"></i>
+                        <h2>Bem-vinda ao seu espaço de apoio! 💛</h2>
+                        <p>Estou aqui para te acompanhar durante essa fase especial do puerpério. Como posso te ajudar hoje? 🤱</p>
+                        <div class="quick-questions">
+                            <button class="quick-btn" data-question="O que é o puerpério?">
+                                💕 O que é o puerpério?
+                            </button>
+                            <button class="quick-btn" data-question="Como lidar com o baby blues?">
+                                🌸 Como lidar com o baby blues?
+                            </button>
+                            <button class="quick-btn" data-question="O que devo comer no puerpério?">
+                                🥗 Alimentação no puerpério
+                            </button>
+                            <button class="quick-btn" data-question="Como cuidar da cicatriz da cesárea?">
+                                🩹 Cuidados pós-cesárea
+                            </button>
+                            <button class="quick-btn" data-question="Quando devo procurar o médico?">
+                                ⚠️ Sinais de alerta
+                            </button>
+                            <button class="quick-btn" data-question="Exercícios no puerpério">
+                                🏃‍♀️ Atividade física
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Messages will be added here dynamically -->
+                </div>
+
+                <!-- Back to Welcome Button -->
+                <div class="back-to-welcome" id="back-to-welcome" style="display: none;">
+                    <button class="btn btn-secondary" id="back-btn">
+                        <i class="fas fa-home"></i>
+                        🏠 Voltar ao início
+                    </button>
+                </div>
+
+                <!-- Typing Indicator -->
+                <div class="typing-indicator" id="typing-indicator">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span>Assistente está digitando... ✨</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <div class="input-container">
+                <button class="btn btn-icon" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="input-wrapper">
+                    <input type="text" id="message-input" placeholder="Digite sua pergunta sobre puerpério..." maxlength="500">
+                    <button class="btn btn-send" id="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-info">
+                    <span id="char-count">0/500</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alert Modal -->
+        <div class="modal" id="alert-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Alerta Médico</h3>
+                    <button class="close-modal" id="close-alert">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="alert-message"></p>
+                    <div class="alert-actions">
+                        <button class="btn btn-primary" id="emergency-call">
+                            <i class="fas fa-phone"></i>
+                            Ligar para Emergência
+                        </button>
+                        <button class="btn btn-secondary" id="find-doctor">
+                            <i class="fas fa-user-md"></i>
+                            Encontrar Médico
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
+
