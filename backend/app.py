@@ -43,8 +43,8 @@ if OPENAI_API_KEY:
 
 # Classe User para Flask-Login
 class User(UserMixin):
-    def __init__(self, id, name, email, baby_name=None):
-        self.id = str(id)
+    def __init__(self, user_id, name, email, baby_name=None):
+        self.id = str(user_id)
         self.name = name
         self.email = email
         self.baby_name = baby_name
