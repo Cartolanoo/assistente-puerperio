@@ -787,19 +787,20 @@ class ChatbotPuerperio {
             this.resourcesTitle.textContent = '🤰 Cuidados na Gestação';
             let html = '';
             
-            gestacao.forEach(trimestre => {
+            for (const [key, trimestre] of Object.entries(gestacao)) {
                 html += `
                     <div class="trimestre-card">
-                        <h4>${trimestre.trimestre}</h4>
-                        <p style="margin-bottom: 1rem; color: #666;">${trimestre.descricao}</p>
-                        ${trimestre.cuidados.map(cuidado => `
-                            <div class="semana-item">
-                                <strong>${cuidado.semana}:</strong> ${cuidado.cuidado}
-                            </div>
-                        `).join('')}
+                        <h4>${trimestre.nome}</h4>
+                        <p style="margin-bottom: 0.5rem; color: #666;"><strong>${trimestre.semanas}</strong> - ${trimestre.descricao}</p>
+                        ${trimestre.cuidados ? trimestre.cuidados.map(cuidado => `
+                            <div class="semana-item">✅ ${cuidado}</div>
+                        `).join('') : ''}
+                        ${trimestre.desenvolvimento_bebe ? `<div style="margin-top: 1rem; padding: 0.8rem; background: #e8f5e9; border-radius: 8px;"><strong>👶 Desenvolvimento do bebê:</strong><br>${trimestre.desenvolvimento_bebe}</div>` : ''}
+                        ${trimestre.exames ? `<div style="margin-top: 1rem;"><strong>🔬 Exames recomendados:</strong><ul style="margin: 0.5rem 0; padding-left: 1.5rem;">${trimestre.exames.map(ex => `<li>${ex}</li>`).join('')}</ul></div>` : ''}
+                        ${trimestre.alerta ? `<div class="alerta-importante"><strong>⚠️ Atenção:</strong> ${trimestre.alerta}</div>` : ''}
                     </div>
                 `;
-            });
+            }
             
             this.resourcesContent.innerHTML = html;
             this.resourcesModal.classList.add('show');
@@ -816,19 +817,35 @@ class ChatbotPuerperio {
             this.resourcesTitle.textContent = '👶 Cuidados Pós-Parto';
             let html = '';
             
-            posparto.forEach(periodo => {
+            for (const [key, periodo] of Object.entries(posparto)) {
                 html += `
                     <div class="periodo-card">
-                        <h4>${periodo.periodo}</h4>
-                        <p style="margin-bottom: 1rem; color: #666;">${periodo.descricao}</p>
-                        ${periodo.cuidados.map(cuidado => `
-                            <div class="semana-item">
-                                <strong>${cuidado.semana}:</strong> ${cuidado.cuidado}
+                        <h4>${periodo.nome}</h4>
+                        <p style="margin-bottom: 0.5rem; color: #666;"><strong>${periodo.semanas}</strong> - ${periodo.descricao}</p>
+                        ${periodo.cuidados_fisicos ? `
+                            <div style="margin-bottom: 1rem;">
+                                <strong>💪 Cuidados Físicos:</strong>
+                                ${periodo.cuidados_fisicos.map(c => `<div class="semana-item">✅ ${c}</div>`).join('')}
                             </div>
-                        `).join('')}
+                        ` : ''}
+                        ${periodo.cuidados_emocionais ? `
+                            <div style="margin-bottom: 1rem;">
+                                <strong>💕 Cuidados Emocionais:</strong>
+                                ${periodo.cuidados_emocionais.map(c => `<div class="semana-item">❤️ ${c}</div>`).join('')}
+                            </div>
+                        ` : ''}
+                        ${periodo.amamentacao ? `
+                            <div style="margin-bottom: 1rem;">
+                                <strong>🍼 Amamentação:</strong>
+                                ${periodo.amamentacao.map(c => `<div class="semana-item">🤱 ${c}</div>`).join('')}
+                            </div>
+                        ` : ''}
+                        ${periodo.desenvolvimento_bebe ? `<div style="margin-top: 1rem; padding: 0.8rem; background: #e8f5e9; border-radius: 8px;"><strong>👶 Desenvolvimento do bebê:</strong><br>${periodo.desenvolvimento_bebe}</div>` : ''}
+                        ${periodo.alertas ? `<div class="alerta-importante"><strong>⚠️ Atenção:</strong> ${periodo.alertas}</div>` : ''}
+                        ${periodo.telefones_uteis ? `<div style="margin-top: 0.5rem; padding: 0.8rem; background: #f8f9fa; border-radius: 8px;">📞 ${periodo.telefones_uteis}</div>` : ''}
                     </div>
                 `;
-            });
+            }
             
             this.resourcesContent.innerHTML = html;
             this.resourcesModal.classList.add('show');
@@ -839,37 +856,55 @@ class ChatbotPuerperio {
     
     async showVacinas() {
         try {
-            const [mae, bebe] = await Promise.all([
+            const [maeData, bebeData] = await Promise.all([
                 fetch('/api/vacinas/mae').then(r => r.json()),
                 fetch('/api/vacinas/bebe').then(r => r.json())
             ]);
             
             this.resourcesTitle.textContent = '💉 Carteira de Vacinação';
-            let html = '<h3 style="color: #f4a6a6; margin: 1.5rem 0 1rem;">👩 Vacinas para Mãe</h3>';
+            let html = '';
             
-            mae.forEach(vacina => {
-                html += `
-                    <div class="vacina-card">
-                        <h4>${vacina.vacina}</h4>
-                        <p style="margin-bottom: 0.5rem;"><strong>Quando:</strong> ${vacina.quando}</p>
-                        <p style="margin-bottom: 0.5rem;"><strong>Onde:</strong> ${vacina.onde}</p>
-                        <p style="color: #666;">${vacina.descricao}</p>
-                    </div>
-                `;
-            });
+            // Vacinas da mãe
+            for (const [key, periodo] of Object.entries(maeData)) {
+                if (key !== 'calendario') {
+                    html += `
+                        <div class="vacina-card">
+                            <h4>${periodo.nome || key}</h4>
+                            ${periodo.descricao ? `<p style="margin-bottom: 1rem; color: #666;">${periodo.descricao}</p>` : ''}
+                            ${periodo.vacinas ? periodo.vacinas.map(v => `
+                                <div style="margin-bottom: 1rem; padding: 1rem; background: #fff9f7; border-radius: 8px; border-left: 3px solid #f4a6a6;">
+                                    <strong>💉 ${v.nome}</strong><br>
+                                    ${v.quando ? `<span style="color: #666;">⏰ Quando: ${v.quando}</span><br>` : ''}
+                                    ${v.dose ? `<span style="color: #666;">📅 Dose: ${v.dose}</span><br>` : ''}
+                                    ${v.protege ? `<span style="color: #666;">🛡️ Protege: ${v.protege}</span><br>` : ''}
+                                    ${v.seguranca ? `<span style="color: #666;">✅ ${v.seguranca}</span><br>` : ''}
+                                    ${v.observacao ? `<em style="color: #8b5a5a;">${v.observacao}</em>` : ''}
+                                </div>
+                            `).join('') : ''}
+                            ${periodo.importante ? `<div class="alerta-importante" style="background: #fff3cd; border-color: #ffc107;">⚠️ ${periodo.importante}</div>` : ''}
+                        </div>
+                    `;
+                }
+            }
             
-            html += '<h3 style="color: #f4a6a6; margin: 1.5rem 0 1rem;">👶 Vacinas para Bebê</h3>';
-            
-            bebe.forEach(vacina => {
-                html += `
-                    <div class="vacina-card">
-                        <h4>${vacina.vacina}</h4>
-                        <p style="margin-bottom: 0.5rem;"><strong>Quando:</strong> ${vacina.quando}</p>
-                        <p style="margin-bottom: 0.5rem;"><strong>Protege contra:</strong> ${vacina.protege}</p>
-                        <p style="color: #666;">${vacina.descricao}</p>
-                    </div>
-                `;
-            });
+            // Vacinas do bebê
+            for (const [key, periodo] of Object.entries(bebeData)) {
+                if (key !== 'calendario') {
+                    html += `
+                        <div class="vacina-card">
+                            <h4>${periodo.idade || key}</h4>
+                            ${periodo.vacinas ? periodo.vacinas.map(v => `
+                                <div style="margin-bottom: 1rem; padding: 1rem; background: #e8f5e9; border-radius: 8px; border-left: 3px solid #4caf50;">
+                                    <strong>💉 ${v.nome}</strong><br>
+                                    ${v.doenca ? `<span style="color: #666;">🦠 Protege contra: ${v.doenca}</span><br>` : ''}
+                                    ${v.local ? `<span style="color: #666;">📍 Onde: ${v.local}</span><br>` : ''}
+                                    ${v.observacao ? `<em style="color: #8b5a5a;">${v.observacao}</em>` : ''}
+                                </div>
+                            `).join('') : ''}
+                        </div>
+                    `;
+                }
+            }
             
             this.resourcesContent.innerHTML = html;
             this.resourcesModal.classList.add('show');
