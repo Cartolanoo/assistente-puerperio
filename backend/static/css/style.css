@@ -14,14 +14,11 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
+    margin: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background: rgba(255, 252, 248, 0.95);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 25px 50px rgba(139, 125, 107, 0.15);
+    background: linear-gradient(135deg, #f8f4f0 0%, #e8d5d1 50%, #d4c5c0 100%);
     overflow: hidden;
 }
 
@@ -170,10 +167,16 @@ body {
     flex: 1;
     overflow-y: auto;
     padding: 1rem;
+    padding-bottom: 1rem;
 }
 
 .sidebar-section {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-section:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 1rem;
 }
 
 .sidebar-section h4 {
@@ -745,13 +748,8 @@ body {
 
 /* Large Desktop (1200px+) */
 @media (min-width: 1200px) {
-    .container {
-        max-width: 1400px;
-        margin: 20px auto;
-    }
-    
     .welcome-content {
-        max-width: 600px;
+        max-width: 800px;
     }
     
     .quick-questions {
@@ -760,16 +758,12 @@ body {
     }
     
     .input-container {
-        max-width: 900px;
+        max-width: 1200px;
     }
 }
 
 /* Desktop (992px - 1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
-    .container {
-        margin: 15px;
-    }
-    
     .quick-questions {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.8rem;
@@ -778,11 +772,6 @@ body {
 
 /* Tablet Landscape (768px - 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
-    .container {
-        margin: 10px;
-        border-radius: 20px;
-    }
-    
     .header {
         padding: 1rem 1.5rem;
     }
@@ -797,7 +786,7 @@ body {
     
     .welcome-content {
         padding: 1.5rem;
-        max-width: 500px;
+        max-width: 600px;
     }
     
     .welcome-content h2 {
@@ -831,9 +820,8 @@ body {
 /* Tablet Portrait (576px - 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
     .container {
-        margin: 5px;
-        border-radius: 15px;
-        height: calc(100vh - 10px);
+        margin: 0;
+        border-radius: 0;
     }
     
     .header {
@@ -980,14 +968,8 @@ body {
         display: none;
     }
     
-    /* Esconde sidebar e botão de menu no mobile */
     .sidebar {
         width: 220px;
-        display: none !important;
-    }
-    
-    #menu-toggle {
-        display: none !important;
     }
     
     .sidebar-header {
