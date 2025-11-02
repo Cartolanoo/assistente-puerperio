@@ -142,28 +142,50 @@ class ChatbotPuerperio:
         
         return None, None, 0
     
-    def gerar_resposta_openai(self, pergunta, contexto=""):
+    def gerar_resposta_openai(self, pergunta, historico=None, contexto=""):
         """Gera resposta usando OpenAI se disponível"""
         if not self.client:
             return None
         
         try:
-            system_message = """Você é um assistente especializado em saúde materna e puerpério. 
-            Forneça informações empáticas, acolhedoras e baseadas em evidências científicas.
-            Sempre encoraje a busca por atendimento médico quando necessário.
-            Use linguagem simples e acolhedora."""
+            system_message = """Você é uma assistente virtual especializada em saúde materna e puerpério, chamada Assistente Puerpério.
+
+Seu papel é ser uma AMIGA ACOLHEDORA e EMPÁTICA que:
+- Conversa de forma NATURAL e CONVERSACIONAL, como se fosse uma pessoa real
+- Usa linguagem CALOROSA, CARINHOSA e ACONCHEGANTE
+- Demonstra COMPREENSÃO e EMPATIA pelos sentimentos da mãe
+- NUNCA soa robótica ou formal demais
+- Fala como uma amiga que já passou por isso ou que entende profundamente
+- Usa expressões como "querida", "amiga", "entendo você", "é normal sentir isso"
+- SEMPRE valida os sentimentos da usuária primeiro
+- Depois oferece informações e conselhos práticos
+- Quando não souber algo, admite isso com carinho
+- Sempre encoraja a busca por ajuda médica quando necessário
+
+IMPORTANTE: Sua resposta deve soar como uma CONVERSA COM UMA AMIGA, não como um manual técnico!
+Seja calorosa, empática e acolhedora SEMPRE."""
             
             if contexto:
                 system_message += f"\n\nContexto adicional: {contexto}"
             
+            # Constrói mensagens incluindo histórico se disponível
+            messages = [{"role": "system", "content": system_message}]
+            
+            # Adiciona histórico recente (últimas 5 interações)
+            if historico and len(historico) > 0:
+                historico_recente = historico[-10:]  # Últimas 10 mensagens
+                for msg in historico_recente:
+                    messages.append({"role": "user", "content": msg.get("pergunta", "")})
+                    messages.append({"role": "assistant", "content": msg.get("resposta", "")})
+            
+            # Adiciona a pergunta atual
+            messages.append({"role": "user", "content": pergunta})
+            
             resposta = self.client.chat.completions.create(
                 model="gpt-4o-mini",
-                messages=[
-                    {"role": "system", "content": system_message},
-                    {"role": "user", "content": pergunta}
-                ],
-                max_tokens=500,
-                temperature=0.7
+                messages=messages,
+                max_tokens=800,  # Aumentado para respostas mais completas
+                temperature=0.8  # Aumentado para respostas mais naturais
             )
             return resposta.choices[0].message.content
         except Exception as e:
@@ -172,6 +194,9 @@ class ChatbotPuerperio:
     
     def chat(self, pergunta, user_id="default"):
         """Função principal do chatbot"""
+        # Busca histórico do usuário
+        historico_usuario = conversas.get(user_id, [])
+        
         # Verifica alertas
         alertas_encontrados = self.verificar_alertas(pergunta)
         
@@ -183,8 +208,8 @@ class ChatbotPuerperio:
             resposta_final = resposta_local
             fonte = "base_conhecimento"
         else:
-            # Tenta OpenAI se disponível
-            resposta_openai = self.gerar_resposta_openai(pergunta)
+            # Tenta OpenAI se disponível (com histórico)
+            resposta_openai = self.gerar_resposta_openai(pergunta, historico=historico_usuario)
             if resposta_openai:
                 resposta_final = resposta_openai
                 fonte = "openai"

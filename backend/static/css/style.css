@@ -908,8 +908,14 @@ body {
         font-size: 0.8rem;
     }
     
+    /* Esconde sidebar e botão de menu no mobile */
     .sidebar {
         width: 220px;
+        display: none !important;
+    }
+    
+    #menu-toggle {
+        display: none !important;
     }
     
     .sidebar-header {
