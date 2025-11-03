@@ -15,7 +15,71 @@
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <!-- Login Screen (shown first) -->
+    <div class="login-screen" id="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <i class="fas fa-heart"></i>
+                <h1>Sophia 💕</h1>
+                <span class="login-subtitle">Sua Amiga do Puerpério</span>
+            </div>
+            <div class="login-content">
+                <h2>Bem-vinda! 👋</h2>
+                <p style="color: #8b5a5a; margin-bottom: 2rem;">Faça login ou crie sua conta para começar</p>
+                
+                <div class="login-tabs">
+                    <button class="login-tab active" data-tab="login">
+                        <i class="fas fa-sign-in-alt"></i> Entrar
+                    </button>
+                    <button class="login-tab" data-tab="register">
+                        <i class="fas fa-user-plus"></i> Cadastrar
+                    </button>
+                </div>
+                
+                <div class="login-forms">
+                    <form class="login-form active" id="initial-login-form">
+                        <div class="form-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="initial-login-email" placeholder="Seu email" required>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="initial-login-password" placeholder="Sua senha" required>
+                        </div>
+                        <button type="submit" class="btn btn-login-main">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Entrar
+                        </button>
+                    </form>
+                    
+                    <form class="login-form" id="initial-register-form">
+                        <div class="form-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="initial-register-name" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="initial-register-email" placeholder="Seu email" required>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="initial-register-password" placeholder="Sua senha (min. 6 caracteres)" required>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-baby"></i>
+                            <input type="text" id="initial-register-baby" placeholder="Nome do bebê (opcional)">
+                        </div>
+                        <button type="submit" class="btn btn-login-main">
+                            <i class="fas fa-user-plus"></i>
+                            Criar Conta
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" id="main-container" style="display: none;">
         <!-- Header -->
         <header class="header">
             <div class="header-content">

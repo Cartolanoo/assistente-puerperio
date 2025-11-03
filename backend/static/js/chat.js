@@ -4,6 +4,37 @@ class ChatbotPuerperio {
         this.isTyping = false;
         this.categories = [];
         this.deviceType = this.detectDevice();
+        this.userLoggedIn = false;
+        this.currentUserName = null;
+        
+        this.initializeLoginElements();
+        this.bindInitialLoginEvents();
+        this.checkIfLoggedIn();
+    }
+    
+    checkIfLoggedIn() {
+        // Check if user is already logged in
+        fetch('/api/user')
+            .then(res => {
+                if (res.ok) {
+                    return res.json().then(user => {
+                        this.userLoggedIn = true;
+                        this.currentUserName = user.name;
+                        this.initMainApp();
+                    });
+                } else {
+                    // User not logged in, show login screen
+                    this.showLoginScreen();
+                }
+            })
+            .catch(() => {
+                this.showLoginScreen();
+            });
+    }
+    
+    initMainApp() {
+        document.getElementById('login-screen').classList.add('hidden');
+        document.getElementById('main-container').style.display = 'flex';
         
         this.initializeElements();
         this.bindEvents();
@@ -11,6 +42,120 @@ class ChatbotPuerperio {
         this.loadChatHistory();
         this.requestNotificationPermission();
         this.optimizeForDevice();
+    }
+    
+    showLoginScreen() {
+        // Login screen is already visible by default
+        document.getElementById('login-screen').style.display = 'flex';
+        document.getElementById('main-container').style.display = 'none';
+    }
+    
+    initializeLoginElements() {
+        this.loginScreen = document.getElementById('login-screen');
+        this.initialLoginForm = document.getElementById('initial-login-form');
+        this.initialRegisterForm = document.getElementById('initial-register-form');
+        this.loginTabs = document.querySelectorAll('.login-tab');
+    }
+    
+    bindInitialLoginEvents() {
+        // Tab switching
+        this.loginTabs.forEach(tab => {
+            tab.addEventListener('click', () => this.switchInitialTab(tab.dataset.tab));
+        });
+        
+        // Login form submission
+        this.initialLoginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.handleInitialLogin();
+        });
+        
+        // Register form submission
+        this.initialRegisterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.handleInitialRegister();
+        });
+    }
+    
+    switchInitialTab(tab) {
+        this.loginTabs.forEach(t => t.classList.remove('active'));
+        this.initialLoginForm.classList.remove('active');
+        this.initialRegisterForm.classList.remove('active');
+        
+        if (tab === 'login') {
+            document.querySelector('[data-tab="login"]').classList.add('active');
+            this.initialLoginForm.classList.add('active');
+        } else if (tab === 'register') {
+            document.querySelector('[data-tab="register"]').classList.add('active');
+            this.initialRegisterForm.classList.add('active');
+        }
+    }
+    
+    async handleInitialLogin() {
+        const email = document.getElementById('initial-login-email').value.trim();
+        const password = document.getElementById('initial-login-password').value;
+        
+        if (!email || !password) {
+            alert('Por favor, preencha todos os campos! 💕');
+            return;
+        }
+        
+        try {
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email, password})
+            });
+            
+            const data = await response.json();
+            
+            if (response.ok) {
+                this.userLoggedIn = true;
+                this.currentUserName = data.user.name;
+                this.initMainApp();
+            } else {
+                alert('⚠️ ' + data.erro);
+            }
+        } catch (error) {
+            alert('❌ Erro ao fazer login. Tente novamente.');
+        }
+    }
+    
+    async handleInitialRegister() {
+        const name = document.getElementById('initial-register-name').value.trim();
+        const email = document.getElementById('initial-register-email').value.trim();
+        const password = document.getElementById('initial-register-password').value;
+        const babyName = document.getElementById('initial-register-baby').value.trim();
+        
+        if (!name || !email || !password) {
+            alert('Por favor, preencha os campos obrigatórios! 💕');
+            return;
+        }
+        
+        if (password.length < 6) {
+            alert('A senha deve ter no mínimo 6 caracteres! 💕');
+            return;
+        }
+        
+        try {
+            const response = await fetch('/api/register', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({name, email, password, baby_name: babyName})
+            });
+            
+            const data = await response.json();
+            
+            if (response.ok) {
+                alert('🎉 ' + data.mensagem);
+                // Auto switch to login after successful registration
+                this.switchInitialTab('login');
+                document.getElementById('initial-login-email').value = email;
+            } else {
+                alert('⚠️ ' + data.erro);
+            }
+        } catch (error) {
+            alert('❌ Erro ao cadastrar. Tente novamente.');
+        }
     }
     
     generateUserId() {
@@ -1052,17 +1197,22 @@ class ChatbotPuerperio {
     }
     
     showCelebration() {
+        const userName = this.currentUserName || 'Mamãe';
         const celebration = document.createElement('div');
         celebration.className = 'celebration-overlay';
         celebration.innerHTML = `
             <div class="celebration-content">
+                <div class="confetti-container"></div>
                 <div class="celebration-emoji">🎉</div>
-                <h2>Parabéns, Mamãe! 🎉</h2>
+                <h2>Parabéns, ${userName}! 🎉</h2>
                 <p>Você cuidou da saúde!</p>
                 <p style="font-size: 0.9em; margin-top: 1rem;">Obrigada por se proteger 💕</p>
             </div>
         `;
         document.body.appendChild(celebration);
+        
+        // Create confetti
+        this.createConfetti();
         
         setTimeout(() => {
             celebration.classList.add('show');
@@ -1072,6 +1222,26 @@ class ChatbotPuerperio {
             celebration.classList.remove('show');
             setTimeout(() => celebration.remove(), 500);
         }, 3000);
+    }
+    
+    createConfetti() {
+        const colors = ['#f4a6a6', '#e8b4b8', '#ffd89b', '#ff92a4', '#a8e6cf', '#ffaaa5'];
+        const confettiCount = 50;
+        
+        for (let i = 0; i < confettiCount; i++) {
+            setTimeout(() => {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 3000);
+            }, i * 30);
+        }
     }
     
     escapeHtml(text) {

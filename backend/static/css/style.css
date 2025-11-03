@@ -12,6 +12,175 @@ body {
     color: #5a4a42;
 }
 
+/* Login Screen */
+.login-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #f8f4f0 0%, #e8d5d1 50%, #d4c5c0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    animation: fadeIn 0.5s ease;
+}
+
+.login-screen.hidden {
+    display: none;
+}
+
+.login-container {
+    background: white;
+    border-radius: 25px;
+    padding: 3rem;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(244, 166, 166, 0.3);
+    animation: slideUp 0.5s ease;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header i {
+    font-size: 3rem;
+    color: #f4a6a6;
+    margin-bottom: 0.5rem;
+}
+
+.login-header h1 {
+    font-size: 2.5rem;
+    color: #8b5a5a;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+.login-subtitle {
+    display: block;
+    color: #8b5a5a;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.login-content h2 {
+    text-align: center;
+    color: #8b5a5a;
+    margin-bottom: 1rem;
+}
+
+.login-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(244, 166, 166, 0.2);
+}
+
+.login-tab {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: #8b5a5a;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    bottom: -2px;
+}
+
+.login-tab.active {
+    color: #f4a6a6;
+    border-bottom-color: #f4a6a6;
+}
+
+.login-tab i {
+    margin-right: 0.5rem;
+}
+
+.login-forms {
+    position: relative;
+}
+
+.login-form {
+    display: none;
+}
+
+.login-form.active {
+    display: block;
+}
+
+.login-form .form-group {
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+.login-form .form-group i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f4a6a6;
+    font-size: 1.1rem;
+}
+
+.login-form .form-group input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid rgba(244, 166, 166, 0.3);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fff9f7;
+}
+
+.login-form .form-group input:focus {
+    outline: none;
+    border-color: #f4a6a6;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(244, 166, 166, 0.1);
+}
+
+.btn-login-main {
+    width: 100%;
+    background: linear-gradient(135deg, #f4a6a6 0%, #e8b4b8 100%);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(244, 166, 166, 0.3);
+    margin-top: 0.5rem;
+}
+
+.btn-login-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 166, 166, 0.4);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .container {
     width: 100%;
     margin: 0;
@@ -1826,5 +1995,27 @@ body {
 @keyframes celebrationSpin {
     0%, 100% { transform: rotate(0deg) scale(1); }
     50% { transform: rotate(10deg) scale(1.1); }
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    z-index: 9999;
+    animation: confettiFall linear;
+}
+
+@keyframes confettiFall {
+    0% {
+        top: -10px;
+        opacity: 1;
+    }
+    100% {
+        top: 100vh;
+        opacity: 0;
+        transform: translateX(var(--drift, 0));
+    }
 }
 
