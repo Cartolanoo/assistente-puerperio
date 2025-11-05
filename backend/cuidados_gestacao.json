@@ -5,9 +5,9 @@
     "descricao": "Fase de formação e desenvolvimento inicial",
     "cuidados": [
       "Inicie o pré-natal o quanto antes",
-      "Tome ácido fólico diariamente (400mcg)",
+      "O uso de ácido fólico é geralmente recomendado no início da gestação, mas deve ser indicado e orientado por um profissional de saúde durante o pré-natal. Procure orientação médica ou de enfermagem antes de usar qualquer medicamento, suplemento ou vitamina.",
       "Evite completamente álcool e cigarros",
-      "Limite cafeína a 200mg/dia",
+      "O consumo de cafeína durante a gestação deve ser moderado. A recomendação geral é de até 200mg por dia, mas procure orientação médica ou de enfermagem para orientações específicas sobre sua ingestão.",
       "Descanse bastante - cansaço é normal",
       "Alimente-se bem e em pequenas porções",
       "Evite carnes cruas e peixes com alto mercúrio",
@@ -16,12 +16,19 @@
     ],
     "desenvolvimento_bebe": "Formação dos principais órgãos, sistema nervoso, coração começando a bater, rosto se formando",
     "exames": [
-      "Hemograma completo",
-      "Tipagem sanguínea",
-      "Glicemia",
-      "Sorologias (HIV, sífilis, hepatites)",
-      "Ultrassom 1º trimestre",
-      "Teste de Papanicolau"
+      "Tipagem sanguínea e fator Rh - ⚕️ Realize apenas com prescrição médica",
+      "Hemograma completo - ⚕️ Realize apenas com prescrição médica",
+      "Eletroforese de hemoglobina - ⚕️ Realize apenas com prescrição médica",
+      "Glicemia de jejum - ⚕️ Realize apenas com prescrição médica",
+      "TSH e T4 livre - ⚕️ Realize apenas com prescrição médica",
+      "Teste rápido ou Sorologia para HIV - ⚕️ Realize apenas com prescrição médica",
+      "Teste rápido ou Sorologia para Sífilis - ⚕️ Realize apenas com prescrição médica",
+      "Sorologia para Hepatites B (HBsAg) e C (anti HCV) - ⚕️ Realize apenas com prescrição médica",
+      "Sorologia para Toxoplasmose (IgM e IgG) - ⚕️ Realize apenas com prescrição médica",
+      "Sorologia para Rubéola IgG (se sem informação vacinal) - ⚕️ Realize apenas com prescrição médica",
+      "Urina I e Urocultura - ⚕️ Realize apenas com prescrição médica",
+      "Protoparasitológico de fezes - ⚕️ Realize apenas com prescrição médica",
+      "Ultrassonografia obstétrica - ⚕️ Realize apenas com prescrição médica (recomendada pela Rede Cegonha no início do pré-natal)"
     ],
     "sintomas_comuns": [
       "Enjoo e náuseas",
@@ -31,7 +38,7 @@
       "Alterações de humor",
       "Tonturas"
     ],
-    "alerta": "Sangramento intenso, dor abdominal forte, febre alta ou perda de líquido - procure atendimento imediato!"
+    "alerta": "Sangramento intenso, dor abdominal forte, febre alta ou perda de líquido - procure imediatamente um hospital com emergência obstétrica, onde há equipe especializada para gestantes."
   },
   
   "2_trimestre": {
@@ -39,8 +46,8 @@
     "nome": "Segundo Trimestre",
     "descricao": "Fase de crescimento e desenvolvimento",
     "cuidados": [
-      "Continue com os suplementos prescritos",
-      "Aumente a ingestão de ferro e cálcio",
+      "Continue com os suplementos prescritos pelo seu médico. Procure orientação médica ou de enfermagem antes de usar qualquer medicamento, suplemento ou vitamina.",
+      "A ingestão adequada de ferro e cálcio é importante durante a gestação. Procure orientação médica ou de enfermagem antes de usar qualquer medicamento, suplemento ou vitamina.",
       "Use roupas confortáveis",
       "Pratique exercícios moderados",
       "Cuide da postura",
@@ -50,12 +57,15 @@
       "Pense no quartinho do bebê"
     ],
     "desenvolvimento_bebe": "Bebê começa a se mover, você pode sentir os chutes, sexo já visível no ultrassom, órgãos se desenvolvendo",
+    "informacao_ultrassonografia": "A ultrassonografia obstétrica é um recurso importante para acompanhar a evolução da gestação. Seus principais objetivos incluem: datar a gestação, identificar precocemente gravidez gemelar, diagnosticar viabilidade e detectar anomalias. Deve ser solicitada no início do pré-natal e no final do segundo trimestre, conforme recomendação da Rede Cegonha. ⚕️ Procure orientação médica ou de enfermagem sobre quando realizar cada exame.",
     "exames": [
-      "Ultrassom morfológico",
-      "Teste de tolerância à glicose",
-      "Hemograma",
-      "Ecocardiografia fetal (se indicado)",
-      "Triagem genética (se solicitada)"
+      "Coombs indireto (se gestante Rh negativo) - ⚕️ Realize apenas com prescrição médica",
+      "Teste de tolerância à glicose com 75g (entre 24 e 28 semanas) - ⚕️ Realize apenas com prescrição médica",
+      "Repetir urocultura - ⚕️ Realize apenas com prescrição médica",
+      "Repetir Toxoplasmose (se susceptível - IgG negativo) - ⚕️ Realize apenas com prescrição médica",
+      "Repetir VDRL (sorologia para sífilis) - ⚕️ Realize apenas com prescrição médica",
+      "Ultrassonografia obstétrica (recomendada pela Rede Cegonha no final do segundo trimestre) - ⚕️ Realize apenas com prescrição médica",
+      "Ultrassonografia morfológica (entre 20-24 semanas, se indicada pelo médico) - ⚕️ Realize apenas com prescrição médica. Pode ser indicada em casos de: anomalia fetal detectada na ultrassonografia de rotina, restrição de crescimento fetal precoce, alterações no líquido amniótico, gravidez múltipla, histórico de doenças hereditárias, ou idade materna avançada (≥ 37 anos)"
     ],
     "sintomas_comuns": [
       "Movimentos do bebê (após 18-20 semanas)",
@@ -65,7 +75,7 @@
       "Dor nas costas",
       "Varizes"
     ],
-    "alerta": "Diminuição dos movimentos do bebê, contrações regulares antes de 37 semanas - consulte seu médico!"
+    "alerta": "Diminuição dos movimentos do bebê, contrações regulares antes de 37 semanas - procure imediatamente um hospital com emergência obstétrica, onde há equipe especializada para gestantes."
   },
   
   "3_trimestre": {
@@ -79,17 +89,20 @@
       "Visite a maternidade",
       "Organize a rede de apoio",
       "Descanse bastante",
-      "Alimentação equilibrada continua importante",
-      "Mantenha-se ativa mas sem exageros",
+      "A alimentação equilibrada continua sendo importante",
+      "Mantenha-se ativa, mas sem exageros",
       "Pratique técnicas de respiração"
     ],
     "desenvolvimento_bebe": "Bebê crescendo rapidamente, ganhando peso, pulmões se desenvolvendo, posição para o parto",
     "exames": [
-      "Ultrassom 3º trimestre",
-      "Hemograma",
-      "Bacteriúria",
-      "Cardiotocografia (CTG)",
-      "Avaliação de peso fetal"
+      "Repetir hemograma completo - ⚕️ Realize apenas com prescrição médica",
+      "Repetir urocultura - ⚕️ Realize apenas com prescrição médica",
+      "Repetir Teste rápido ou Sorologia para HIV - ⚕️ Realize apenas com prescrição médica",
+      "Repetir Teste rápido ou Sorologia para Sífilis - ⚕️ Realize apenas com prescrição médica",
+      "Repetir Sorologia para Hepatites B (HBsAg) e C (anti HCV) - ⚕️ Realize apenas com prescrição médica",
+      "Repetir Toxoplasmose (se susceptível) - ⚕️ Realize apenas com prescrição médica",
+      "Ultrassonografia obstétrica - ⚕️ Realize apenas com prescrição médica",
+      "Cultura vaginal e anal para Streptococcus agalactiae (entre 34-37 semanas) - ⚕️ Realize apenas com prescrição médica"
     ],
     "sintomas_comuns": [
       "Falta de ar",
@@ -99,7 +112,7 @@
       "Contrações de Braxton-Hicks",
       "Bexiga comprimida"
     ],
-    "alerta": "Contrações regulares, rompimento da bolsa, sangramento, diminuição dos movimentos - vá para a maternidade!"
+    "alerta": "Contrações regulares, rompimento da bolsa, sangramento, diminuição dos movimentos - procure imediatamente um hospital com emergência obstétrica, onde há equipe especializada para gestantes e estrutura para parto de urgência."
   }
 }
 

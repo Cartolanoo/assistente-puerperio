@@ -16,7 +16,13 @@
         "titulo": "Massagem abdominal",
         "descricao": "Faça massagens circulares suaves no abdome do bebê, no sentido horário",
         "imagem": "https://via.placeholder.com/400x300/E8B4B8/FFFFFF?text=Massagem+Circular+Abdomen",
-        "dica": "Use um pouco de óleo apropriado para bebês (sem perfumes fortes)"
+        "dica": "Use um pouco de óleo apropriado para bebês (sem perfumes fortes)",
+        "forca": "Muito Suave",
+        "forca_nivel": 3,
+        "tecnica": "Palma da mão em movimento circular",
+        "localizacao": "Abdome (barriga), sentido horário",
+        "velocidade": "Lenta e constante (1 círculo completo por segundo)",
+        "detalhes": "Use a palma da mão aquecida. Movimento circular no sentido horário (seguindo o intestino). Pressão muito leve, apenas deslizando."
       },
       {
         "numero": 3,
@@ -74,8 +80,16 @@
         "numero": 2,
         "titulo": "Pancadas nas costas",
         "descricao": "Dê 5 pancadas firmes nas costas do bebê, entre as escápulas",
-        "imagem": "https://via.placeholder.com/400x300/F39C12/FFFFFF?text=2.+5+Pancadas+Nas+Costas",
-        "dica": "Use a palma da mão, com cuidado. O objetivo é deslocar o objeto"
+        "imagem": "https://via.placeholder.com/400x300/F39C12/FFFFFF?text=2.+5+Pancadas+Nas+Costas+Entre+Escápulas",
+        "dica": "Use a palma da mão, com cuidado. O objetivo é deslocar o objeto",
+        "forca": "Média-Forte",
+        "forca_nivel": 7,
+        "tecnica": "Palma da mão em forma de concha",
+        "localizacao": "Entre as escápulas (omoplatas)",
+        "velocidade": "Rápida (1 pancada por segundo)",
+        "detalhes": "Mantenha o bebê com cabeça mais baixa que o tronco. Use movimento de pulso, não força excessiva.",
+        "telefones_uteis": "🚨 SAMU 192 - Ligue IMEDIATAMENTE! Peça ajuda enquanto faz a manobra.",
+        "emergencia": "Se o bebê ficar inconsciente, azulado ou parar de respirar: inicie RCP e chame SAMU 192 urgente!"
       },
       {
         "numero": 3,
@@ -88,8 +102,17 @@
         "numero": 4,
         "titulo": "Compressões no peito",
         "descricao": "Faça 5 compressões no esterno (osso do peito) com dois dedos",
-        "imagem": "https://via.placeholder.com/400x300/27AE60/FFFFFF?text=4.+5+Compressões+No+Peito",
-        "dica": "Use a profundidade de 1/3 do peito. Verifique se o objeto saiu"
+        "imagem": "https://via.placeholder.com/400x300/27AE60/FFFFFF?text=4.+5+Compressões+No+Peito+2+Dedos",
+        "dica": "Use a profundidade de 1/3 do peito. Verifique se o objeto saiu",
+        "forca": "Firme",
+        "forca_nivel": 6,
+        "profundidade": "1/3 da profundidade do peito (aproximadamente 2-3cm)",
+        "tecnica": "Dois dedos (indicador e médio) no centro do esterno",
+        "localizacao": "Centro do peito, logo abaixo da linha dos mamilos",
+        "velocidade": "Moderada (1 compressão por segundo)",
+        "detalhes": "Pressione para baixo e solte completamente. Permita que o peito volte à posição normal entre cada compressão.",
+        "telefones_uteis": "🚨 SAMU 192 - Ligue IMEDIATAMENTE durante a manobra! Peça ajuda enquanto faz.",
+        "emergencia": "Se o bebê desmaiar, perder consciência ou parar de respirar: continue as compressões e chame SAMU 192 urgente!"
       },
       {
         "numero": 5,
@@ -126,8 +149,18 @@
         "numero": 3,
         "titulo": "Compressões",
         "descricao": "Faça 30 compressões rápidas e firmes",
-        "imagem": "https://via.placeholder.com/400x300/8E44AD/FFFFFF?text=3.+30+Compressões+Rápidas",
-        "dica": "Profundidade: 4cm. Ritmo: 100-120 por minuto"
+        "imagem": "https://via.placeholder.com/400x300/8E44AD/FFFFFF?text=3.+30+Compressões+4cm+100-120+min",
+        "dica": "Profundidade: 4cm. Ritmo: 100-120 por minuto",
+        "forca": "Firme (mas não excessiva)",
+        "forca_nivel": 7,
+        "profundidade": "4cm (aproximadamente 1/3 da profundidade do peito)",
+        "tecnica": "Dois dedos (indicador e médio) no centro do peito",
+        "localizacao": "Centro do peito, logo abaixo da linha dos mamilos",
+        "velocidade": "100-120 compressões por minuto (quase 2 por segundo)",
+        "ritmo": "Rápido e constante - como batida de música 'Stayin' Alive'",
+        "detalhes": "Pressione para baixo 4cm, solte completamente. Permita o retorno completo do peito. Mantenha ritmo constante.",
+        "telefones_uteis": "🚨 SAMU 192 - DEVE estar ligado ANTES de iniciar RCP! Continue enquanto espera ajuda.",
+        "emergencia": "Não pare até: o bebê voltar a respirar, chegar ajuda médica ou você ficar exausto. Peça ajuda para revezar."
       },
       {
         "numero": 4,
@@ -163,7 +196,13 @@
         "titulo": "Pancadinhas suaves",
         "descricao": "Bata levemente nas costas do bebê",
         "imagem": "https://via.placeholder.com/400x300/E8B4B8/FFFFFF?text=2.+Pancadinhas+Suaves+Costas",
-        "dica": "Não precisa ser forte. Pancadas suaves são suficientes"
+        "dica": "Não precisa ser forte. Pancadas suaves são suficientes",
+        "forca": "Muito Suave",
+        "forca_nivel": 2,
+        "tecnica": "Ponta dos dedos ou palma da mão em forma de concha",
+        "localizacao": "Meio das costas, entre as escápulas",
+        "velocidade": "Lenta e suave (1 pancada a cada 2-3 segundos)",
+        "detalhes": "Movimento delicado de pulso. O objetivo é apenas ajudar o ar subir, não forçar."
       },
       {
         "numero": 3,
@@ -200,14 +239,30 @@
         "titulo": "Prepare tudo antes",
         "descricao": "Separe: toalha, sabonete/espuma apropriados, fralda limpa, roupa, ambiente aquecido",
         "imagem": "https://via.placeholder.com/400x300/AED6F1/FFFFFF?text=1.+Prepare+Tudo+Antes",
-        "dica": "Tenha tudo ao alcance - NUNCA deixe o bebê sozinho na água!"
+        "dica": "Tenha tudo ao alcance - NUNCA deixe o bebê sozinho na água!",
+        "materiais": [
+          "Toalha limpa e macia",
+          "Sabonete neutro ou espuma de banho para bebês",
+          "Fralda limpa",
+          "Roupa limpa",
+          "Termômetro de banho (opcional)",
+          "Água morna (37°C)"
+        ],
+        "ambiente": "Quarto fechado, temperatura agradável (24-26°C), sem correntes de ar",
+        "seguranca": "NUNCA deixe o bebê sozinho na água, nem por segundos! Se precisar atender telefone ou porta, tire o bebê da água primeiro."
       },
       {
         "numero": 2,
         "titulo": "Temperatura da água",
         "descricao": "A água deve estar morna (37°C). Teste com o cotovelo ou pulso",
-        "imagem": "https://via.placeholder.com/400x300/85C1E9/FFFFFF?text=2.+Teste+Temperatura+Água",
-        "dica": "Mais frio que muito quente. Sua pele é mais sensível que a do bebê"
+        "imagem": "https://via.placeholder.com/400x300/85C1E9/FFFFFF?text=2.+Teste+Temperatura+Água+37C",
+        "dica": "Mais frio que muito quente. Sua pele é mais sensível que a do bebê",
+        "temperatura": "37°C (temperatura do corpo)",
+        "temperatura_ambiente": "24-26°C (quarto fechado, sem correntes de ar)",
+        "materiais": "Termômetro de banho (opcional), seu cotovelo ou pulso para testar",
+        "como_testar": "Coloque o cotovelo ou pulso na água. Deve estar morna, nunca quente ou fria.",
+        "telefones_uteis": "Se o bebê entrar em contato com água muito quente: SAMU 192 imediatamente!",
+        "emergencia": "Se o bebê se queimar: retire da água, cubra com pano limpo e úmido, chame SAMU 192"
       },
       {
         "numero": 3,
@@ -257,8 +312,16 @@
         "numero": 1,
         "titulo": "Tenha tudo à mão",
         "descricao": "Separe: fralda limpa, lenços umedecidos/água, pomada preventiva, lixeira",
-        "imagem": "https://via.placeholder.com/400x300/F9E79F/FFFFFF?text=1.+Tenha+Tudo+À+Mão",
-        "dica": "Organização evita acidentes - tenha tudo pronto antes de começar"
+        "imagem": "https://via.placeholder.com/400x300/F9E79F/FFFFFF?text=1.+Materiais+Para+Troca+Fralda",
+        "dica": "Organização evita acidentes - tenha tudo pronto antes de começar",
+        "materiais": [
+          "Fralda limpa (tamanho adequado)",
+          "Lenços umedecidos ou algodão com água morna",
+          "Pomada preventiva para assaduras",
+          "Lixeira próxima",
+          "Área de troca limpa e segura"
+        ],
+        "seguranca": "NUNCA deixe o bebê sozinho na troca, nem por segundos! Sempre mantenha uma mão no bebê."
       },
       {
         "numero": 2,
@@ -279,7 +342,10 @@
         "titulo": "Limpe bem",
         "descricao": "Limpe de frente para trás, especialmente em meninas",
         "imagem": "https://via.placeholder.com/400x300/F1C40F/FFFFFF?text=4.+Limpe+De+Frente+Para+Trás",
-        "dica": "Use lenço ou água em cada região. Uma vez só para não espalhar bactérias"
+        "dica": "Use lenço ou água em cada região. Uma vez só para não espalhar bactérias",
+        "tecnica": "Sempre de frente para trás (vagina → ânus) para evitar infecções",
+        "materiais": "Lenços umedecidos ou algodão com água morna",
+        "telefones_uteis": "Se notar vermelhidão intensa, bolhas ou feridas: consulte pediatra ou Disque Saúde 136"
       },
       {
         "numero": 5,
@@ -316,8 +382,11 @@
         "numero": 1,
         "titulo": "Posição supina (de costas)",
         "descricao": "SEMPRE coloque o bebê de barriga para cima no berço",
-        "imagem": "https://via.placeholder.com/400x300/A9DFBF/FFFFFF?text=1.+SEMPRE+De+Barriga+Para+Cima",
-        "dica": "Esta é a posição MAIS SEGURA comprovadamente"
+        "imagem": "https://via.placeholder.com/400x300/A9DFBF/FFFFFF?text=1.+Bebê+De+Barriga+Para+Cima+Seguro",
+        "dica": "Esta é a posição MAIS SEGURA comprovadamente",
+        "posicao": "Barriga para cima (decúbito dorsal)",
+        "evitar": "NUNCA: de bruços, de lado, com travesseiro, com cobertor solto",
+        "telefones_uteis": "Se o bebê não estiver respirando bem: SAMU 192 imediatamente!"
       },
       {
         "numero": 2,

@@ -6,8 +6,8 @@
     "cuidados_fisicos": [
       "Descanse o máximo possível",
       "Durma quando o bebê dorme",
-      "Cuide bem da cicatriz (normal ou cesárea)",
-      "Use compressas frias para inchaço",
+      "Cuide bem da cicatriz (normal ou cesárea) - ⚕️ Curativos e avaliações de cicatriz devem ser feitos por profissional de saúde",
+      "Use compressas frias para inchaço - ⚕️ Se houver sinais de infecção, procure imediatamente um hospital com emergência obstétrica, onde há equipe especializada para puérperas",
       "Troque o absorvente com frequência",
       "Faça banho de assento se necessário",
       "Não faça exercícios intensos ainda",
@@ -33,8 +33,8 @@
       "Seja paciente com você e o bebê"
     ],
     "desenvolvimento_bebe": "Reflexos primitivos, reconhecimento de vozes familiares, desenvolvimento de padrões de sono",
-    "alertas": "Febre alta, sangramento excessivo, depressão intensa, dificuldade de vínculo com bebê - procure ajuda!",
-    "telefones_uteis": "SAMU 192 para emergências. CVV 188 para apoio emocional."
+      "alertas": "Febre alta, sangramento excessivo, depressão intensa, dificuldade de vínculo com bebê - procure imediatamente um hospital com emergência obstétrica, onde há equipe especializada para puérperas. ⚕️ Estas condições requerem avaliação e tratamento médico profissional imediato.",
+    "telefones_uteis": "SAMU 192 para emergências. CVV 188 para apoio emocional. Em caso de sintomas graves, procure imediatamente um hospital com emergência obstétrica."
   },
   
   "segundo_mes": {
@@ -42,9 +42,9 @@
     "nome": "Segundo mês - Estabelecendo rotinas",
     "descricao": "Rotinas começam a se estabelecer",
     "cuidados_fisicos": [
-      "Cicatrização deve estar bem avançada",
-      "Inchaços devem diminuir",
-      "Comece caminhadas leves se liberado",
+      "Cicatrização deve estar bem avançada - ⚕️ Avaliação de cicatriz deve ser feita por profissional de saúde",
+      "Inchaços devem diminuir - ⚕️ Se persistirem ou piorarem, consulte seu médico",
+      "Comece caminhadas leves se liberado - ⚕️ Só inicie exercícios após liberação médica",
       "Cuidado com esforços físicos",
       "Mantenha alimentação equilibrada",
       "Continue hidratação adequada",
@@ -65,7 +65,7 @@
       "Mantenha hidratação e alimentação adequadas"
     ],
     "desenvolvimento_bebe": "Primeiros sorrisos sociais, rastreamento visual melhor, movimentos mais intencionais",
-    "alertas": "Se tristeza profunda persistir, procure psicólogo. Baby blues que dura mais de 2 semanas merece atenção."
+    "alertas": "Se tristeza profunda persistir, procure psicólogo. Baby blues que dura mais de 2 semanas merece atenção. ⚕️ Depressão pós-parto requer diagnóstico e tratamento por profissional de saúde mental qualificado."
   },
   
   "terceiro_mes": {
@@ -73,12 +73,12 @@
     "nome": "Terceiro mês - Ganhando confiança",
     "descricao": "Você está se adaptando e ganhando confiança",
     "cuidados_fisicos": [
-      "Pode começar exercícios mais intensos (se liberado)",
+      "Pode começar exercícios mais intensos (se liberado) - ⚕️ Só inicie após liberação médica expressa",
       "Continue alimentação balanceada",
-      "Foco em exercícios de Kegel",
-      "Fortaleça o abdome gradualmente",
+      "Foco em exercícios de Kegel - ⚕️ Consulte profissional de saúde para orientação adequada",
+      "Fortaleça o abdome gradualmente - ⚕️ Exercícios específicos devem ser orientados por profissional",
       "Cuide da postura ao amamentar",
-      "Hidratação continua importante"
+      "A hidratação continua sendo importante"
     ],
     "cuidados_emocionais": [
       "Você já domina a rotina",
@@ -104,7 +104,7 @@
     "cuidados_fisicos": [
       "Você pode retomar atividades físicas mais intensas",
       "Foco em fortalecimento do core",
-      "Exercícios específicos para diástase",
+      "Exercícios específicos para diástase - ⚕️ Devem ser prescritos e orientados por fisioterapeuta ou médico",
       "Alimentação equilibrada para energia",
       "Cuidado com carregar bebê pesado",
       "Postura durante cuidados com bebê"

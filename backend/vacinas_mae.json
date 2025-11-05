@@ -2,7 +2,7 @@
   "pre_natal": {
     "nome": "Vacinas no Pré-Natal",
     "descricao": "Importantes durante a gestação",
-    "importante": "Consulte seu obstetra sobre todas as vacinas antes de tomar!",
+    "importante": "⚕️ Consulte seu obstetra sobre todas as vacinas antes de tomar! Todas as vacinas requerem prescrição e acompanhamento médico profissional.",
     "vacinas": [
       {
         "nome": "Vacina Influenza (Gripe)",
@@ -85,9 +85,9 @@
         "documentos": "Cartão do SUS, documento de identidade"
       }
     ],
-    "observacao": "Muitas vacinas são seguras durante amamentação. Consulte seu médico sobre cada uma."
+    "observacao": "Muitas vacinas são seguras durante amamentação. ⚕️ Consulte seu médico sobre cada uma. Todas as vacinas devem ser prescritas e administradas por profissional de saúde qualificado."
   },
   
-  "importante": "Sempre discuta com seu médico quais vacinas são adequadas para seu caso específico, especialmente durante amamentação."
+    "importante": "⚕️ IMPORTANTE: Sempre discuta com seu médico quais vacinas são adequadas para seu caso específico, especialmente durante amamentação. Todas as vacinas requerem prescrição médica e devem ser administradas por profissional de saúde qualificado."
 }
 

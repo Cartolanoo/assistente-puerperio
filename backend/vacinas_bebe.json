@@ -3,7 +3,7 @@
     "nome": "Calendário Nacional de Vacinação",
     "descricao": "Todas as vacinas essenciais para o primeiro ano",
     "fonte": "PNO - Programa Nacional de Imunizações",
-    "importante": "Mantenha a carteira de vacinação atualizada! Vacine seu bebê na idade certa."
+    "importante": "⚕️ IMPORTANTE: Mantenha a carteira de vacinação atualizada! Vacine seu bebê na idade certa. Todas as vacinas devem ser prescritas e administradas por profissional de saúde qualificado no posto de saúde ou unidade médica autorizada."
   },
   "0_2_meses": {
     "idade": "Ao nascer",
@@ -55,7 +55,7 @@
       },
       {
         "nome": "Rotavírus Humano - 1ª dose",
-        "doenca": "Diarréia grave, desidratação",
+        "doenca": "Diarreia grave, desidratação",
         "local": "Posto de Saúde",
         "observacao": "Vacina oral (gotas). IMPORTANTE: não dar se bebê tiver algum problema imunológico",
         "onde": "Unidade Básica de Saúde (UBS), Posto de Saúde",
@@ -98,7 +98,7 @@
       },
       {
         "nome": "Rotavírus Humano - 2ª dose",
-        "doenca": "Diarréia grave",
+        "doenca": "Diarreia grave",
         "local": "Posto de Saúde",
         "observacao": "Vacina oral (gotas)",
         "onde": "Unidade Básica de Saúde (UBS), Posto de Saúde",
@@ -187,7 +187,7 @@
       "Irritabilidade pode acontecer",
       "Dor no local da injeção",
       "Geralmente passa em 24-48 horas",
-      "Use antitérmico se necessário (sob orientação médica)",
+      "Se houver febre após a vacinação, procure orientação médica ou de enfermagem antes de usar qualquer medicamento, suplemento ou vitamina. O uso de antitérmico deve ser indicado pelo médico ou enfermeiro.",
       "Mais frio local pode ajudar com dor"
     ],
     "quando_procurar_medico": "Febre alta (>38,5°C), choro inconsolável, convulsão, erupção cutânea generalizada, dificuldade respiratória - PROCURE ATENDIMENTO IMEDIATO!",
