@@ -23,6 +23,8 @@ COPY . .
 # Expõe a porta (Railway usa porta dinâmica, mas definimos 8080 como padrão)
 EXPOSE 8080
 
+# Torna o script executável
+RUN chmod +x start.sh
+
 # Comando para iniciar a aplicação (Railway fornece PORT via variável de ambiente)
-# O Railway sempre define a variável PORT
-CMD sh -c "gunicorn wsgi:app --bind 0.0.0.0:$PORT"
+CMD ["./start.sh"]
