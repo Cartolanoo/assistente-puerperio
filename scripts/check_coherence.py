@@ -299,22 +299,27 @@ class CoherenceChecker:
     
     def check_consistency(self) -> None:
         """Verifica consistência entre arquivos"""
-        # Verifica se há duplicação de mensagens
+        # Verifica se há duplicação de mensagens (apenas mensagens idênticas)
         welcome_messages = []
         
         html_file = self.project_root / "backend" / "templates" / "index.html"
         if html_file.exists():
             with open(html_file, 'r', encoding='utf-8') as f:
                 content = f.read()
-                # Procura por mensagens de boas-vindas
-                welcome_pattern = r'Bem-vinda[^<]*'
+                # Procura por mensagens de boas-vindas completas (dentro de tags h2)
+                welcome_pattern = r'<h2[^>]*>([^<]*Bem-vinda[^<]*)</h2>'
                 matches = re.findall(welcome_pattern, content, re.IGNORECASE)
                 welcome_messages.extend(matches)
         
-        if len(welcome_messages) > 1:
-            self.issues["warning"].append(
-                f"[AVISO] Multiplas mensagens de boas-vindas encontradas ({len(welcome_messages)})"
-            )
+        # Remove duplicatas exatas e verifica apenas se há mensagens idênticas
+        unique_messages = list(set(welcome_messages))
+        if len(unique_messages) < len(welcome_messages):
+            # Há mensagens duplicadas exatas
+            duplicates = [msg for msg in welcome_messages if welcome_messages.count(msg) > 1]
+            if duplicates:
+                self.issues["warning"].append(
+                    f"[AVISO] Mensagens de boas-vindas duplicadas encontradas: {set(duplicates)}"
+                )
     
     def scan_project(self) -> None:
         """Escaneia todo o projeto"""

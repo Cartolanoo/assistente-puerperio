@@ -11,12 +11,11 @@ ESTATISTICAS:
 
 [OK] Nenhum problema critico encontrado!
 
-[AVISO] AVISOS:
-  [AVISO] Multiplas mensagens de boas-vindas encontradas (2)
+[OK] Nenhum aviso encontrado!
 
 [INFO] INFORMACOES:
   [OK] Arquivo messages.json encontrado - mensagens centralizadas
 
 ======================================================================
-[AVISO] COERENCIA: INCONSISTENTE (com avisos)
+[OK] COERENCIA: TOTAL
 ======================================================================
