@@ -1,0 +1,42 @@
+{
+  "welcome": {
+    "title": "Bem-vinda ao seu espaço de apoio! 💛",
+    "subtitle": "Aqui cuidamos de você, enquanto você cuida do seu bebê.",
+    "inclusion": "Cada jornada é única — e todas merecem acolhimento. 🌼",
+    "main": "Estou aqui para te acompanhar durante essa fase especial do puerpério. Como posso te ajudar hoje? 🤱"
+  },
+  "greetings": {
+    "morning": "Bom dia, {name} 🌅",
+    "afternoon": "Boa tarde, {name} ☀️",
+    "evening": "Boa noite, {name} 🌆",
+    "night": "Boa madrugada, {name} 🌙"
+  },
+  "goodbye": {
+    "default": "Até logo! 👋",
+    "warm": "Até logo! Foi um prazer conversar com você! 💛",
+    "supportive": "Até logo! Estou sempre aqui quando precisar! 🌼"
+  },
+  "responses": {
+    "acknowledgment": {
+      "positive": ["Claro! Vamos ver isso juntos 😊", "Perfeito! Vamos conversar sobre isso 💛", "Entendi! Conte-me mais 🌼"],
+      "neutral": ["Entendo.", "Ok, vamos ver.", "Certo, vamos lá."],
+      "avoid": ["Ok.", "Tudo bem.", "Entendi."]
+    },
+    "empathy": {
+      "validation": ["Entendo perfeitamente como você se sente.", "É normal sentir isso.", "Você não está sozinha nisso."],
+      "support": ["Estou aqui para te apoiar.", "Você está fazendo o seu melhor.", "Cada jornada é única."]
+    }
+  },
+  "errors": {
+    "generic": "Desculpe, ocorreu um erro. Por favor, tente novamente.",
+    "network": "Parece que houve um problema de conexão. Verifique sua internet e tente novamente.",
+    "server": "O servidor está temporariamente indisponível. Tente novamente em alguns instantes."
+  },
+  "medical_warning": {
+    "standard": "⚠️ IMPORTANTE: Este conteúdo é apenas informativo e não substitui uma consulta médica profissional. Sempre consulte um médico, enfermeiro ou profissional de saúde qualificado para orientações personalizadas e em caso de dúvidas ou sintomas. Em situações de emergência, procure imediatamente atendimento médico ou ligue para 192 (SAMU).",
+    "short": "⚠️ Este conteúdo é informativo e não substitui consulta médica profissional."
+  },
+  "features": {
+    "title": "Recursos Disponíveis 💫"
+  }
+}
