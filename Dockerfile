@@ -24,5 +24,5 @@ COPY . .
 EXPOSE 8080
 
 # Comando para iniciar a aplicação (Railway fornece PORT via variável de ambiente)
-# Usa PORT se definido, caso contrário usa 8080
-CMD sh -c "gunicorn wsgi:app --bind 0.0.0.0:${PORT:-8080}"
+# O Railway sempre define a variável PORT
+CMD sh -c "gunicorn wsgi:app --bind 0.0.0.0:$PORT"
