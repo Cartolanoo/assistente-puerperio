@@ -162,10 +162,25 @@ Após o deploy, acesse a URL do seu projeto e verifique:
 - Para Gmail, certifique-se de usar Senha de App (não a senha normal)
 - Verifique os logs do Railway para erros de SMTP
 
+### Erro: "libsqlite3.so.0: cannot open shared object file"
+Este erro ocorre quando o SQLite não está disponível no ambiente do Railway.
+
+**Solução:**
+1. O arquivo `nixpacks.toml` já está configurado para instalar o SQLite
+2. Se o erro persistir, o Railway pode usar o `Dockerfile` como alternativa
+3. No Railway, vá em **Settings** → **Deploy** e verifique:
+   - Se está usando **Nixpacks** (deve usar o `nixpacks.toml`)
+   - Ou se está usando **Dockerfile** (usa o `Dockerfile`)
+
+Se o problema continuar:
+- Faça um novo deploy (o Railway vai recriar o ambiente)
+- Verifique os logs do build para ver se o SQLite foi instalado corretamente
+
 ### Erro 502 Bad Gateway
 - Verifique se o `Procfile` está correto
 - Verifique se o comando `gunicorn wsgi:app` está funcionando
 - Verifique os logs do Railway
+- Verifique se a porta está configurada corretamente (Railway usa variável `PORT`)
 
 ## 📚 Recursos Adicionais
 

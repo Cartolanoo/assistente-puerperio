@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ["python311", "sqlite"]
+
+[phases.install]
+cmds = ["pip install --no-cache-dir -r requirements.txt"]
+
+[phases.build]
+cmds = ["echo 'Build completo'"]
+
+[start]
+cmd = "gunicorn wsgi:app --bind 0.0.0.0:$PORT"

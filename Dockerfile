@@ -1,0 +1,25 @@
+# Usa imagem Python oficial com SQLite incluído
+FROM python:3.11-slim
+
+# Instala dependências do sistema necessárias (SQLite já vem na imagem slim)
+RUN apt-get update && apt-get install -y \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
+# Define diretório de trabalho
+WORKDIR /app
+
+# Copia arquivos de requisitos
+COPY requirements.txt .
+
+# Instala dependências Python
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia o resto da aplicação
+COPY . .
+
+# Expõe a porta
+EXPOSE 8080
+
+# Comando para iniciar a aplicação
+CMD ["gunicorn", "wsgi:app", "--bind", "0.0.0.0:8080"]
