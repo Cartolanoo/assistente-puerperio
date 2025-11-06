@@ -28,7 +28,7 @@ class DialogueSimulator:
     
     def test_greeting_flow(self) -> None:
         """Testa fluxo de saudação"""
-        print("🧪 Testando fluxo de saudação...")
+        print("[TESTE] Testando fluxo de saudacao...")
         
         test_cases = [
             {"input": "Oi", "expected": ["oi", "olá", "bom dia", "boa tarde", "boa noite"]},
@@ -52,15 +52,15 @@ class DialogueSimulator:
                         break
             
             if found_match:
-                self.results["passed"].append(f"✅ Saudação '{case['input']}' tem resposta adequada")
+                self.results["passed"].append(f"[OK] Saudacao '{case['input']}' tem resposta adequada")
             else:
                 self.results["warnings"].append(
-                    f"⚠️ Saudação '{case['input']}' pode não ter resposta específica"
+                    f"[AVISO] Saudacao '{case['input']}' pode nao ter resposta especifica"
                 )
     
     def test_question_flow(self) -> None:
         """Testa fluxo de perguntas"""
-        print("🧪 Testando fluxo de perguntas...")
+        print("[TESTE] Testando fluxo de perguntas...")
         
         base = self.load_base_knowledge()
         
@@ -76,13 +76,13 @@ class DialogueSimulator:
                     has_answers = True
         
         if has_questions and has_answers:
-            self.results["passed"].append("✅ Base de conhecimento tem perguntas e respostas")
+            self.results["passed"].append("[OK] Base de conhecimento tem perguntas e respostas")
         else:
-            self.results["failed"].append("❌ Base de conhecimento incompleta")
+            self.results["failed"].append("[ERRO] Base de conhecimento incompleta")
     
     def test_context_continuity(self) -> None:
         """Testa continuidade de contexto"""
-        print("🧪 Testando continuidade de contexto...")
+        print("[TESTE] Testando continuidade de contexto...")
         
         # Simula conversa sequencial
         conversation = [
@@ -107,16 +107,16 @@ class DialogueSimulator:
         
         if len(related_categories) >= 2:
             self.results["passed"].append(
-                f"✅ Contexto mantido - {len(related_categories)} categorias relacionadas encontradas"
+                f"[OK] Contexto mantido - {len(related_categories)} categorias relacionadas encontradas"
             )
         else:
             self.results["warnings"].append(
-                "⚠️ Poucas categorias relacionadas - continuidade pode ser afetada"
+                "[AVISO] Poucas categorias relacionadas - continuidade pode ser afetada"
             )
     
     def test_medical_warnings(self) -> None:
         """Testa se avisos médicos estão presentes"""
-        print("🧪 Testando avisos médicos...")
+        print("[TESTE] Testando avisos medicos...")
         
         base = self.load_base_knowledge()
         has_warnings = False
@@ -129,16 +129,16 @@ class DialogueSimulator:
                     break
         
         if has_warnings:
-            self.results["passed"].append("✅ Avisos médicos encontrados nas respostas")
+            self.results["passed"].append("[OK] Avisos medicos encontrados nas respostas")
         else:
             self.results["warnings"].append(
-                "⚠️ Avisos médicos podem não estar presentes em todas as respostas"
+                "[AVISO] Avisos medicos podem nao estar presentes em todas as respostas"
             )
     
     def run_all_tests(self) -> None:
         """Executa todos os testes"""
         print("=" * 70)
-        print("🤖 SIMULADOR DE DIÁLOGO - SOPHIA CHATBOT")
+        print("SIMULADOR DE DIALOGO - SOPHIA CHATBOT")
         print("=" * 70)
         print()
         
@@ -149,21 +149,21 @@ class DialogueSimulator:
         
         print()
         print("=" * 70)
-        print("📊 RESULTADOS:")
+        print("RESULTADOS:")
         print("=" * 70)
         
         if self.results["passed"]:
-            print("\n✅ TESTES APROVADOS:")
+            print("\n[OK] TESTES APROVADOS:")
             for result in self.results["passed"]:
                 print(f"  {result}")
         
         if self.results["failed"]:
-            print("\n❌ TESTES FALHADOS:")
+            print("\n[ERRO] TESTES FALHADOS:")
             for result in self.results["failed"]:
                 print(f"  {result}")
         
         if self.results["warnings"]:
-            print("\n⚠️ AVISOS:")
+            print("\n[AVISO] AVISOS:")
             for result in self.results["warnings"]:
                 print(f"  {result}")
         
@@ -176,11 +176,11 @@ class DialogueSimulator:
         
         if total_failed == 0:
             if total_warnings == 0:
-                print("✅ COERÊNCIA: TOTAL")
+                print("[OK] COERENCIA: TOTAL")
             else:
-                print("⚠️ COERÊNCIA: COM AVISOS")
+                print("[AVISO] COERENCIA: COM AVISOS")
         else:
-            print("❌ COERÊNCIA: PROBLEMAS ENCONTRADOS")
+            print("[ERRO] COERENCIA: PROBLEMAS ENCONTRADOS")
         
         print("=" * 70)
 
