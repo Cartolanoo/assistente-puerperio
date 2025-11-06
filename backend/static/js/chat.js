@@ -2077,7 +2077,7 @@ class ChatbotPuerperio {
         // Adiciona aviso médico no TOPO (antes de tudo)
         let html = `<div class="alerta-medico-guia" style="background: #fff3cd; border: 2px solid #ffc107; padding: 1.2rem; margin-bottom: 1.5rem; border-radius: 8px; text-align: center;">
             <p style="margin: 0; color: #856404; font-size: 0.95rem; line-height: 1.6; font-weight: 600;">
-                <i class="fas fa-exclamation-triangle"></i> <strong>⚕️ AVISO MÉDICO IMPORTANTE:</strong><br>
+                <i class="fas fa-exclamation-triangle"></i> <strong>⚕️ AVISO IMPORTANTE:</strong><br>
                 As informações fornecidas pela Sophia têm caráter educativo e de apoio. 
                 <strong>Qualquer tipo de prescrição de medicamentos, suplementos, exercícios e outros procedimentos deve ser indicada e orientada por um profissional de saúde qualificado.</strong> 
                 Procure orientação médica ou de enfermagem antes de usar qualquer medicamento, suplemento ou vitamina. 
@@ -2311,7 +2311,7 @@ class ChatbotPuerperio {
             // Adiciona aviso médico no TOPO (antes de tudo)
             let html = `<div class="alerta-medico-guia" style="background: #fff3cd; border: 2px solid #ffc107; padding: 1.2rem; margin-bottom: 1.5rem; border-radius: 8px; text-align: center;">
                 <p style="margin: 0; color: #856404; font-size: 0.95rem; line-height: 1.6; font-weight: 600;">
-                    <i class="fas fa-exclamation-triangle"></i> <strong>⚕️ AVISO MÉDICO IMPORTANTE:</strong><br>
+                    <i class="fas fa-exclamation-triangle"></i> <strong>⚕️ AVISO IMPORTANTE:</strong><br>
                     As informações fornecidas pela Sophia têm caráter educativo e de apoio. 
                     <strong>Qualquer tipo de prescrição de medicamentos, suplementos, exercícios e outros procedimentos deve ser indicada e orientada por um profissional de saúde qualificado.</strong> 
                     Procure orientação médica ou de enfermagem antes de usar qualquer medicamento, suplemento ou vitamina. 
@@ -2353,7 +2353,7 @@ class ChatbotPuerperio {
             // Adiciona aviso médico no TOPO (antes de tudo)
             let html = `<div class="alerta-medico-guia" style="background: #fff3cd; border: 2px solid #ffc107; padding: 1.2rem; margin-bottom: 1.5rem; border-radius: 8px; text-align: center;">
                 <p style="margin: 0; color: #856404; font-size: 0.95rem; line-height: 1.6; font-weight: 600;">
-                    <i class="fas fa-exclamation-triangle"></i> <strong>⚕️ AVISO MÉDICO IMPORTANTE:</strong><br>
+                    <i class="fas fa-exclamation-triangle"></i> <strong>⚕️ AVISO IMPORTANTE:</strong><br>
                     As informações fornecidas pela Sophia têm caráter educativo e de apoio. 
                     <strong>Qualquer tipo de prescrição de medicamentos, suplementos, exercícios e outros procedimentos deve ser indicada e orientada por um profissional de saúde qualificado.</strong> 
                     Procure orientação médica ou de enfermagem antes de usar qualquer medicamento, suplemento ou vitamina. 
@@ -2428,7 +2428,7 @@ class ChatbotPuerperio {
             // Adiciona aviso médico fixo no rodapé
             html += `<div class="alerta-medico-rodape" style="background: #fff3cd; border: 2px solid #ffc107; padding: 1.2rem; margin-top: 2rem; border-radius: 8px; text-align: center;">
                 <p style="margin: 0; color: #856404; font-size: 0.95rem; line-height: 1.6; font-weight: 600;">
-                    <i class="fas fa-exclamation-triangle"></i> <strong>⚕️ AVISO MÉDICO IMPORTANTE:</strong><br>
+                    <i class="fas fa-exclamation-triangle"></i> <strong>⚕️ AVISO IMPORTANTE:</strong><br>
                     As informações fornecidas pela Sophia têm caráter educativo e de apoio. 
                     <strong>Todas as vacinas devem ser prescritas e administradas por profissional de saúde qualificado.</strong> 
                     Consulte sempre seu médico ou posto de saúde antes de tomar qualquer vacina.

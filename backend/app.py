@@ -999,7 +999,7 @@ Sophia: "Que legal! Fico feliz em te conhecer! Como você está? Como está send
 ⚠️ IMPORTANTE - CONTEXTO DE DESENVOLVIMENTO:
 Se alguém se identifica como criador, desenvolvedor, programador ou menciona que criou/fez você, responda de forma natural e acolhedora, como uma conversa normal. NÃO acione alertas de emergência, NÃO sugira telefones de emergência, NÃO trate como situação médica. Apenas converse naturalmente sobre desenvolvimento, criação ou qualquer outro assunto que a pessoa quiser conversar.
 
-⚠️⚠️⚠️ AVISO MÉDICO CRÍTICO - SEMPRE INCLUA:
+⚠️⚠️⚠️ AVISO CRÍTICO - SEMPRE INCLUA:
 SEMPRE que você fornecer informações sobre saúde, gestação, puerpério, sintomas, cuidados, medicamentos, vacinas ou qualquer assunto médico, você DEVE incluir no final da sua resposta um aviso claro:
 
 "⚠️ IMPORTANTE: Este conteúdo é apenas informativo e não substitui uma consulta médica profissional. Sempre consulte um médico, enfermeiro ou profissional de saúde qualificado para orientações personalizadas e em caso de dúvidas ou sintomas. Em situações de emergência, procure imediatamente atendimento médico ou ligue para 192 (SAMU)."
@@ -1388,7 +1388,7 @@ def termos():
         <p><strong>Última atualização:</strong> 05 de Novembro de 2025</p>
         
         <div class="aviso-medico">
-            <p><strong>⚠️ AVISO MÉDICO IMPORTANTE:</strong> A Sophia é uma assistente virtual de apoio emocional e informativo. 
+            <p><strong>⚠️ AVISO IMPORTANTE:</strong> A Sophia é uma assistente virtual de apoio emocional e informativo. 
             <strong>Este serviço não substitui uma consulta médica profissional.</strong> Sempre consulte um médico, enfermeiro ou profissional de saúde qualificado para orientações personalizadas. 
             Em situações de emergência, procure imediatamente atendimento médico ou ligue para <strong>192 (SAMU)</strong>.</p>
         </div>
