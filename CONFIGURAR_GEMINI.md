@@ -2,14 +2,13 @@
 
 ## ✅ Implementação Completa
 
-O sistema agora suporta **Google Gemini** como alternativa à OpenAI! 
+O sistema utiliza **Google Gemini** para respostas inteligentes! 
 
-### 🎯 Estratégia de Fallback
+### 🎯 Estratégia de Respostas
 
-O sistema tenta as IAs nesta ordem:
-1. **OpenAI** (se disponível)
-2. **Gemini** (se OpenAI falhar ou não estiver disponível)
-3. **Base Local Humanizada** (se nenhuma IA funcionar)
+O sistema tenta as fontes nesta ordem:
+1. **Google Gemini** (IA principal - obrigatória)
+2. **Base Local Humanizada** (se Gemini não estiver disponível)
 
 ## 📋 Passo a Passo
 
@@ -36,10 +35,7 @@ pip install -r requirements.txt
 Adicione a chave ao arquivo `.env` na raiz do projeto:
 
 ```env
-# OpenAI (opcional, mas recomendado)
-OPENAI_API_KEY=sua_chave_openai_aqui
-
-# Gemini (opcional, mas recomendado como backup)
+# Gemini (obrigatório para uso da IA)
 GEMINI_API_KEY=sua_chave_gemini_aqui
 ```
 
@@ -56,30 +52,27 @@ python backend/app.py
 Ao iniciar o servidor, você verá:
 
 ```
-[OPENAI] ✅ Cliente OpenAI inicializado com sucesso
 [GEMINI] ✅ Cliente Gemini inicializado com sucesso
 ```
 
 Ou:
 
 ```
-[OPENAI] ⚠️ OPENAI_API_KEY não configurada
-[GEMINI] ✅ Cliente Gemini inicializado com sucesso
+[GEMINI] ⚠️ GEMINI_API_KEY não configurada
 ```
 
 ## 🎯 Vantagens do Gemini
 
 1. **Gratuito** - Cota generosa gratuita
-2. **Fallback Automático** - Usado automaticamente se OpenAI falhar
-3. **Mesma Humanização** - Respostas empáticas e conversacionais
-4. **Rápido** - Modelo `gemini-1.5-flash` é muito rápido
+2. **Humanização** - Respostas empáticas e conversacionais
+3. **Rápido** - Modelo `gemini-1.5-flash` é muito rápido
+4. **Fallback Automático** - Usa base local se Gemini não estiver disponível
 
 ## 📊 Logs
 
-O sistema registra qual IA foi usada:
+O sistema registra qual fonte foi usada:
 
 ```
-[CHAT] ✅ Resposta gerada pela IA (OpenAI)
 [CHAT] ✅ Resposta gerada pela IA (Gemini)
 [CHAT] 📚 Resposta da base local HUMANIZADA
 ```
@@ -101,5 +94,5 @@ pip install google-generativeai
 
 ## 🚀 Pronto!
 
-Agora você tem **duas IAs** configuradas com fallback automático! 🎉
+Agora você tem **Google Gemini** configurado com fallback automático para base local! 🎉
 
